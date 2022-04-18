@@ -1,11 +1,11 @@
 name: fruit_design_system
-description: A new Flutter package project.
+description: The fruit design system.
 version: 0.0.1
-homepage:
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.16.1 <3.0.0"
+  flutter: ">=2.10.3 <3.0.0"
 
 dependencies:
   flutter:

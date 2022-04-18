@@ -1,2 +1,2 @@
 # Fruit Design System
-The fruit design system
+The fruit design system.
