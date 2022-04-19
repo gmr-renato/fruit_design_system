@@ -23,10 +23,7 @@ class FruitPrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final text = Text(
-      label,
-      style: fruitOnPrimaryTextTheme.button,
-    );
+    final text = Text(label);
 
     final style = ButtonStyle(
       shape: MaterialStateProperty.all(const StadiumBorder()),
