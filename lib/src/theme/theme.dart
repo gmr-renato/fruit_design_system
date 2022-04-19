@@ -9,5 +9,5 @@ class FruitTheme {
   final colorScheme = fruitColorScheme;
   final themeData = fruitThemeData;
   final primaryTextTheme = fruitPrimaryTextTheme;
-  final secondaryTextTheme = fruitSecondaryTextTheme;
+  final secondaryTextTheme = fruitOnPrimaryTextTheme;
 }

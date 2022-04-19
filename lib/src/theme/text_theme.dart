@@ -5,7 +5,11 @@ TextTheme fruitPrimaryTextTheme = Typography.material2018().black.apply(
       displayColor: fruitColorScheme.onSurfaceVariant,
     );
 
-TextTheme fruitSecondaryTextTheme = Typography.material2018().black.apply(
+TextTheme fruitOnPrimaryTextTheme = Typography.material2018().white.apply(
       bodyColor: fruitColorScheme.onPrimary,
       displayColor: fruitColorScheme.onPrimaryContainer,
+    );
+TextTheme fruitOnSecondaryTextTheme = Typography.material2018().white.apply(
+      bodyColor: fruitColorScheme.onSecondary,
+      displayColor: fruitColorScheme.onSecondaryContainer,
     );
