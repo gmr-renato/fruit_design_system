@@ -4,6 +4,10 @@ TextTheme fruitPrimaryTextTheme = Typography.material2018().black.apply(
       bodyColor: fruitColorScheme.onSurface,
       displayColor: fruitColorScheme.onSurfaceVariant,
     );
+TextTheme fruitHighlightTextTheme = Typography.material2018().black.apply(
+      bodyColor: fruitColorScheme.primary,
+      displayColor: fruitColorScheme.secondary,
+    );
 
 TextTheme fruitOnPrimaryTextTheme = Typography.material2018().white.apply(
       bodyColor: fruitColorScheme.onPrimary,

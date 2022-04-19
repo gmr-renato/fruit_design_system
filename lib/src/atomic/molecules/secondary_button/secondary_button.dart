@@ -18,12 +18,17 @@ class FruitSecondaryButton extends StatelessWidget {
   }) : super(key: key);
 
   final void Function()? onPressed;
-  final Text label;
+  final String label;
   final Icon? icon;
 
   @override
   Widget build(BuildContext context) {
-    final _style = ButtonStyle(
+    final text = Text(
+      label,
+      style: fruitHighlightTextTheme.button,
+    );
+
+    final style = ButtonStyle(
       shape: MaterialStateProperty.all(const StadiumBorder()),
       side: MaterialStateProperty.all(
         BorderSide(color: fruitColorScheme.primary),
@@ -36,18 +41,19 @@ class FruitSecondaryButton extends StatelessWidget {
             .withOpacity(FruitThemeConstants.primaryOverlayOpacity),
       ),
     );
+
     if (icon != null) {
       return OutlinedButton.icon(
         onPressed: onPressed,
         icon: icon!,
-        label: label,
-        style: _style,
+        label: text,
+        style: style,
       );
     } else {
       return OutlinedButton(
         onPressed: onPressed,
-        child: label,
-        style: _style,
+        child: text,
+        style: style,
       );
     }
   }

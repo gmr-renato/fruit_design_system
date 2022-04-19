@@ -18,12 +18,17 @@ class FruitPrimaryButton extends StatelessWidget {
   }) : super(key: key);
 
   final void Function()? onPressed;
-  final Text label;
+  final String label;
   final Icon? icon;
 
   @override
   Widget build(BuildContext context) {
-    final _style = ButtonStyle(
+    final text = Text(
+      label,
+      style: fruitOnPrimaryTextTheme.button,
+    );
+
+    final style = ButtonStyle(
       shape: MaterialStateProperty.all(const StadiumBorder()),
       backgroundColor: MaterialStateProperty.all(fruitColorScheme.primary),
       foregroundColor: MaterialStateProperty.all(fruitColorScheme.onPrimary),
@@ -34,14 +39,14 @@ class FruitPrimaryButton extends StatelessWidget {
       return ElevatedButton.icon(
         onPressed: onPressed,
         icon: icon!,
-        label: label,
-        style: _style,
+        label: text,
+        style: style,
       );
     } else {
       return ElevatedButton(
         onPressed: onPressed,
-        child: label,
-        style: _style,
+        child: text,
+        style: style,
       );
     }
   }
