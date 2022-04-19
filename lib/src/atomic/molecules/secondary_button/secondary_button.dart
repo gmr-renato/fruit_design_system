@@ -7,19 +7,19 @@ class FruitSecondaryButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.label,
-  })  : icon = null,
+  })  : iconData = null,
         super(key: key);
 
   const FruitSecondaryButton.icon({
     Key? key,
     required this.onPressed,
     required this.label,
-    required this.icon,
+    required this.iconData,
   }) : super(key: key);
 
   final void Function()? onPressed;
   final String label;
-  final Icon? icon;
+  final IconData? iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +39,10 @@ class FruitSecondaryButton extends StatelessWidget {
       ),
     );
 
-    if (icon != null) {
+    if (iconData != null) {
       return OutlinedButton.icon(
         onPressed: onPressed,
-        icon: icon!,
+        icon: Icon(iconData),
         label: text,
         style: style,
       );
