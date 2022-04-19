@@ -7,19 +7,19 @@ class FruitPrimaryButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     required this.label,
-  })  : icon = null,
+  })  : iconData = null,
         super(key: key);
 
   const FruitPrimaryButton.icon({
     Key? key,
     required this.onPressed,
     required this.label,
-    required this.icon,
+    required this.iconData,
   }) : super(key: key);
 
   final void Function()? onPressed;
   final String label;
-  final Icon? icon;
+  final IconData? iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +32,10 @@ class FruitPrimaryButton extends StatelessWidget {
       elevation: MaterialStateProperty.all(0),
     );
 
-    if (icon != null) {
+    if (iconData != null) {
       return ElevatedButton.icon(
         onPressed: onPressed,
-        icon: icon!,
+        icon: Icon(iconData),
         label: text,
         style: style,
       );
