@@ -4,15 +4,15 @@ final fruitThemeData = ThemeData.light().copyWith(
   brightness: Brightness.light,
   primaryColor: fruitColorScheme.primary,
   colorScheme: fruitColorScheme,
-  textTheme: fruitPrimaryTextTheme,
+  textTheme: fruitBaseTextTheme,
   appBarTheme: AppBarTheme(
-    titleTextStyle: fruitPrimaryTextTheme.headline6!.copyWith(
+    titleTextStyle: fruitBaseTextTheme.headline6!.copyWith(
       fontWeight: FontWeight.bold,
     ),
     foregroundColor: fruitColorScheme.onBackground,
     backgroundColor: fruitColorScheme.background,
   ),
-  primaryTextTheme: fruitPrimaryTextTheme,
+  primaryTextTheme: fruitBaseTextTheme,
   primaryColorDark: fruitColorScheme.primary,
   scaffoldBackgroundColor: fruitColorScheme.background,
   floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -20,8 +20,8 @@ final fruitThemeData = ThemeData.light().copyWith(
     foregroundColor: fruitColorScheme.onSecondary,
   ),
   dialogTheme: DialogTheme(
-    contentTextStyle: fruitPrimaryTextTheme.bodyText2,
-    titleTextStyle: fruitPrimaryTextTheme.headline6,
+    contentTextStyle: fruitBaseTextTheme.bodyText2,
+    titleTextStyle: fruitBaseTextTheme.headline6,
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
@@ -30,9 +30,9 @@ final fruitThemeData = ThemeData.light().copyWith(
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
-    helperStyle: fruitPrimaryTextTheme.bodyText1,
-    labelStyle: fruitPrimaryTextTheme.bodyText1,
-    floatingLabelStyle: fruitPrimaryTextTheme.bodyText1,
+    helperStyle: fruitBaseTextTheme.bodyText1,
+    labelStyle: fruitBaseTextTheme.bodyText1,
+    floatingLabelStyle: fruitBaseTextTheme.bodyText1,
     fillColor: Colors.red,
   ),
 );

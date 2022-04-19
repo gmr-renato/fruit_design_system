@@ -8,6 +8,6 @@ part 'constants.dart';
 class FruitTheme {
   final colorScheme = fruitColorScheme;
   final themeData = fruitThemeData;
-  final primaryTextTheme = fruitPrimaryTextTheme;
+  final primaryTextTheme = fruitBaseTextTheme;
   final secondaryTextTheme = fruitOnPrimaryTextTheme;
 }

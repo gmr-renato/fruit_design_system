@@ -1,6 +1,6 @@
 part of 'theme.dart';
 
-TextTheme fruitPrimaryTextTheme = Typography.material2018().black.apply(
+TextTheme fruitBaseTextTheme = Typography.material2018().black.apply(
       bodyColor: fruitColorScheme.onSurface,
       displayColor: fruitColorScheme.onSurfaceVariant,
     );
