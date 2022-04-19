@@ -14,14 +14,21 @@ class FruitSecondaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return OutlinedButton(
       onPressed: onPressed,
       child: child,
       style: ButtonStyle(
         shape: MaterialStateProperty.all(const StadiumBorder()),
-        backgroundColor: MaterialStateProperty.all(fruitColorScheme.secondary),
-        foregroundColor:
-            MaterialStateProperty.all(fruitColorScheme.onSecondary),
+        side: MaterialStateProperty.all(
+          BorderSide(color: fruitColorScheme.primary),
+        ),
+        foregroundColor: MaterialStateProperty.all(
+          fruitColorScheme.primary,
+        ),
+        overlayColor: MaterialStateProperty.all(
+          fruitColorScheme.primary
+              .withOpacity(FruitThemeConstants.primaryOverlayOpacity),
+        ),
       ),
     );
   }

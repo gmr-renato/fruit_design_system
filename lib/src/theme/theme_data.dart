@@ -26,6 +26,7 @@ final fruitThemeData = ThemeData.light().copyWith(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       shape: MaterialStateProperty.all(const StadiumBorder()),
+      elevation: MaterialStateProperty.all(0),
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(

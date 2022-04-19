@@ -21,6 +21,7 @@ class FruitPrimaryButton extends StatelessWidget {
         shape: MaterialStateProperty.all(const StadiumBorder()),
         backgroundColor: MaterialStateProperty.all(fruitColorScheme.primary),
         foregroundColor: MaterialStateProperty.all(fruitColorScheme.onPrimary),
+        elevation: MaterialStateProperty.all(0),
       ),
     );
   }
