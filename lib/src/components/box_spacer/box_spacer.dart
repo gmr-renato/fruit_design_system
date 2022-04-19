@@ -5,10 +5,6 @@ import '../../constants/unit.dart';
 part 'box_spacer_size.dart';
 
 class FruitBoxSpacer extends StatelessWidget {
-  const FruitBoxSpacer.xxSmall({Key? key})
-      : _unit = FruitUnit.xxSmall,
-        super(key: key);
-
   const FruitBoxSpacer.xSmall({Key? key})
       : _unit = FruitUnit.xSmall,
         super(key: key);
@@ -25,11 +21,6 @@ class FruitBoxSpacer extends StatelessWidget {
   const FruitBoxSpacer.large({
     Key? key,
   })  : _unit = FruitUnit.large,
-        super(key: key);
-
-  const FruitBoxSpacer.xLarge({
-    Key? key,
-  })  : _unit = FruitUnit.xLarge,
         super(key: key);
 
   FruitBoxSpacer.custom({

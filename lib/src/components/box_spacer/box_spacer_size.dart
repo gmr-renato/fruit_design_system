@@ -1,10 +1,12 @@
 part of 'box_spacer.dart';
 
-enum FruitBoxSpacerSize { xs, s, m, l, xl }
+enum FruitBoxSpacerSize { xxs, xs, s, m, l, xl, xxl }
 
 extension StormLayoutSpacerSizeExtension on FruitBoxSpacerSize {
   double get kSize {
     switch (this) {
+      case FruitBoxSpacerSize.xxs:
+        return FruitUnit.xxSmall;
       case FruitBoxSpacerSize.xs:
         return FruitUnit.xSmall;
       case FruitBoxSpacerSize.s:
@@ -15,6 +17,8 @@ extension StormLayoutSpacerSizeExtension on FruitBoxSpacerSize {
         return FruitUnit.large;
       case FruitBoxSpacerSize.xl:
         return FruitUnit.xLarge;
+      case FruitBoxSpacerSize.xxl:
+        return FruitUnit.xxLarge;
       default:
         return FruitUnit.medium;
     }
