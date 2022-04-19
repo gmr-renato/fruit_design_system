@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../theme/theme.dart';
 
-class FruitSecondaryButton extends StatelessWidget {
-  const FruitSecondaryButton({
+class FruitPrimaryButton extends StatelessWidget {
+  const FruitPrimaryButton({
     Key? key,
     required this.onPressed,
     required this.child,
@@ -19,9 +19,8 @@ class FruitSecondaryButton extends StatelessWidget {
       child: child,
       style: ButtonStyle(
         shape: MaterialStateProperty.all(const StadiumBorder()),
-        backgroundColor: MaterialStateProperty.all(fruitColorScheme.secondary),
-        foregroundColor:
-            MaterialStateProperty.all(fruitColorScheme.onSecondary),
+        backgroundColor: MaterialStateProperty.all(fruitColorScheme.primary),
+        foregroundColor: MaterialStateProperty.all(fruitColorScheme.onPrimary),
       ),
     );
   }
