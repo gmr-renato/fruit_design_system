@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/theme.dart';
+import '../../../theme/theme.dart';
 
-class FruitPrimaryButton extends StatelessWidget {
-  const FruitPrimaryButton({
+class FruitSecondaryButton extends StatelessWidget {
+  const FruitSecondaryButton({
     Key? key,
     required this.onPressed,
     required this.label,
   })  : icon = null,
         super(key: key);
 
-  const FruitPrimaryButton.icon({
+  const FruitSecondaryButton.icon({
     Key? key,
     required this.onPressed,
     required this.label,
@@ -25,20 +25,26 @@ class FruitPrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final _style = ButtonStyle(
       shape: MaterialStateProperty.all(const StadiumBorder()),
-      backgroundColor: MaterialStateProperty.all(fruitColorScheme.primary),
-      foregroundColor: MaterialStateProperty.all(fruitColorScheme.onPrimary),
-      elevation: MaterialStateProperty.all(0),
+      side: MaterialStateProperty.all(
+        BorderSide(color: fruitColorScheme.primary),
+      ),
+      foregroundColor: MaterialStateProperty.all(
+        fruitColorScheme.primary,
+      ),
+      overlayColor: MaterialStateProperty.all(
+        fruitColorScheme.primary
+            .withOpacity(FruitThemeConstants.primaryOverlayOpacity),
+      ),
     );
-
     if (icon != null) {
-      return ElevatedButton.icon(
+      return OutlinedButton.icon(
         onPressed: onPressed,
         icon: icon!,
         label: label,
         style: _style,
       );
     } else {
-      return ElevatedButton(
+      return OutlinedButton(
         onPressed: onPressed,
         child: label,
         style: _style,
