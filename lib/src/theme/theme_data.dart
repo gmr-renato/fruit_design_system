@@ -6,11 +6,9 @@ final fruitThemeData = ThemeData.light().copyWith(
   colorScheme: fruitColorScheme,
   textTheme: fruitBaseTextTheme,
   appBarTheme: AppBarTheme(
-    titleTextStyle: fruitBaseTextTheme.headline6!.copyWith(
-      fontWeight: FontWeight.bold,
-    ),
     foregroundColor: fruitColorScheme.onBackground,
     backgroundColor: fruitColorScheme.background,
+    elevation: FruitThemeConstants.elevation,
   ),
   primaryTextTheme: fruitBaseTextTheme,
   primaryColorDark: fruitColorScheme.primary,
@@ -26,13 +24,13 @@ final fruitThemeData = ThemeData.light().copyWith(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       shape: MaterialStateProperty.all(const StadiumBorder()),
-      elevation: MaterialStateProperty.all(0),
+      elevation: MaterialStateProperty.all(FruitThemeConstants.elevation),
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
     helperStyle: fruitBaseTextTheme.bodyText1,
     labelStyle: fruitBaseTextTheme.bodyText1,
     floatingLabelStyle: fruitBaseTextTheme.bodyText1,
-    fillColor: Colors.red,
+    fillColor: fruitColorScheme.primary,
   ),
 );
