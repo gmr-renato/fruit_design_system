@@ -27,8 +27,26 @@ class FruitPrimaryButton extends StatelessWidget {
 
     final style = ButtonStyle(
       shape: MaterialStateProperty.all(const StadiumBorder()),
-      backgroundColor: MaterialStateProperty.all(fruitColorScheme.primary),
-      foregroundColor: MaterialStateProperty.all(fruitColorScheme.onPrimary),
+      backgroundColor: MaterialStateColor.resolveWith(
+        (states) {
+          if (states.contains(MaterialState.disabled)) {
+            return fruitThemeData.disabledColor;
+          } else {
+            return fruitColorScheme.primary;
+          }
+        },
+      ),
+      foregroundColor: MaterialStateColor.resolveWith(
+        (states) {
+          if (states.contains(MaterialState.disabled)) {
+            return fruitColorScheme.secondary.withOpacity(
+              FruitThemeConstants.disableTextOpacity,
+            );
+          } else {
+            return fruitColorScheme.onPrimary;
+          }
+        },
+      ),
       elevation: MaterialStateProperty.all(0),
     );
 

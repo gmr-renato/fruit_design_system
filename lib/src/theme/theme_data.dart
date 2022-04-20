@@ -10,6 +10,9 @@ final fruitThemeData = ThemeData.light().copyWith(
     backgroundColor: fruitColorScheme.background,
     elevation: FruitThemeConstants.elevation,
   ),
+  disabledColor: fruitColorScheme.secondary.withOpacity(
+    FruitThemeConstants.disableSurfaceOpacity,
+  ),
   primaryTextTheme: fruitBaseTextTheme,
   primaryColorDark: fruitColorScheme.primary,
   scaffoldBackgroundColor: fruitColorScheme.background,
