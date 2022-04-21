@@ -135,6 +135,40 @@ void main() {
     'PrimaryButton design -',
     () {
       testWidgets(
+        'Validate BackgrounColor as primary & ForegroundColor as onPrimary when onPressed is not null',
+        (WidgetTester tester) async {
+          const label = 'Test';
+          final testingWidget = FruitPrimaryButton(
+            onPressed: () => debugPrint(label),
+            label: label,
+          );
+
+          await tester.pumpWidget(WidgetTreeForMolecules(testingWidget));
+
+          final elevatedButtonFound = tester.firstWidget(
+            find.byType(ElevatedButton),
+          );
+          final textFound = tester.firstWidget(find.byType(Text));
+
+          final buttonStyle = (elevatedButtonFound as ElevatedButton).style;
+          final textStyle = (textFound as Text).style;
+
+          // HACK: hard compare properties using .toString() because
+          // the expected() method return false when comparing runtime type
+          // check: https://stackoverflow.com/questions/68942228/flutter-widget-test-of-elevated-button-color
+          expect(
+            buttonStyle?.backgroundColor.toString(),
+            fruitColorScheme.primary.toString(),
+          );
+          expect(
+            buttonStyle?.foregroundColor.toString(),
+            fruitColorScheme.onPrimary.toString(),
+          );
+
+          expect(textStyle, null);
+        },
+      );
+      testWidgets(
         'Validate BackgrounColor & ForegroundColor as disabled when onPressed is null',
         (WidgetTester tester) async {
           const label = 'Test';
@@ -162,40 +196,6 @@ void main() {
           expect(
             buttonStyle?.backgroundColor.toString(),
             fruitThemeData.disabledColor.toString(),
-          );
-          expect(
-            buttonStyle?.foregroundColor.toString(),
-            fruitColorScheme.onPrimary.toString(),
-          );
-
-          expect(textStyle, null);
-        },
-      );
-      testWidgets(
-        'Validate BackgrounColor as primary & ForegroundColor as onPrimary when onPressed is not null',
-        (WidgetTester tester) async {
-          const label = 'Test';
-          final testingWidget = FruitPrimaryButton(
-            onPressed: () => debugPrint(label),
-            label: label,
-          );
-
-          await tester.pumpWidget(WidgetTreeForMolecules(testingWidget));
-
-          final elevatedButtonFound = tester.firstWidget(
-            find.byType(ElevatedButton),
-          );
-          final textFound = tester.firstWidget(find.byType(Text));
-
-          final buttonStyle = (elevatedButtonFound as ElevatedButton).style;
-          final textStyle = (textFound as Text).style;
-
-          // HACK: hard compare properties using .toString() because
-          // the expected() method return false when comparing runtime type
-          // check: https://stackoverflow.com/questions/68942228/flutter-widget-test-of-elevated-button-color
-          expect(
-            buttonStyle?.backgroundColor.toString(),
-            fruitColorScheme.primary.toString(),
           );
           expect(
             buttonStyle?.foregroundColor.toString(),
