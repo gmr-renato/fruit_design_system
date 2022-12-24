@@ -60,8 +60,8 @@ class FruitPrimaryButton extends StatelessWidget {
     } else {
       return ElevatedButton(
         onPressed: onPressed,
-        child: text,
         style: style,
+        child: text,
       );
     }
   }

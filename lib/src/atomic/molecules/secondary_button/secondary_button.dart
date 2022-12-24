@@ -49,8 +49,8 @@ class FruitSecondaryButton extends StatelessWidget {
     } else {
       return OutlinedButton(
         onPressed: onPressed,
-        child: text,
         style: style,
+        child: text,
       );
     }
   }
